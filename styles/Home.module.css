@@ -3,9 +3,16 @@
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start; /* change from center to flex-start */
+  align-items: flex-start; /* change from center to flex-start */
 }
+
+.logo {
+  width: 30px; /* or any desired width */
+  height: 15px; /* or any desired height */
+  /* additional styles if needed */
+}
+
 
 .title a {
   color: #0070f3;
