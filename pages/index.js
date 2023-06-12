@@ -2,6 +2,7 @@ import "styles/globals.css";
 
 import Head from 'next/head';
 import TopHeader from '../components/TopHeader';
+import Banner from '../components/Banner';
 
 import styles from '../styles/Home.module.css';
 
@@ -15,6 +16,7 @@ export default function Home() {
 
       
         <TopHeader />
+        <Banner />
       
     </div>
   )
