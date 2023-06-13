@@ -23,8 +23,7 @@ interface Props{
 }
 
 export default function Home({authors, posts}: Props) {
-  console.log(posts)
-  console.log(authors)
+  
   return (
     <div className={styles.container}>
       <Head>
@@ -62,6 +61,8 @@ export default function Home({authors, posts}: Props) {
 })}
 
 </div>
+
+
 
     </div>
   )
