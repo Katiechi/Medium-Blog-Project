@@ -37,8 +37,7 @@ function PostPage({ post }) {
                 setSubmitted(true);
             })
 
-            const responseData = await response.json();
-            console.log(responseData);
+          
         } catch (error) {
             console.error("Error submitting form", error);
         }
@@ -219,6 +218,6 @@ export const getStaticProps = async ({ params }) => {
         props: {
             post,
         },
-        revalidate: 60,
+        revalidate: 300,
     };
 };

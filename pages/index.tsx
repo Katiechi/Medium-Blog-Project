@@ -2,7 +2,7 @@ import "styles/globals.css";
 import { Post } from "../typings";
 import React from 'react';
 import { client , urlFor} from '../sanity';
-
+import RootLayout from '../app/layout';
 
 import Head from 'next/head';
 import TopHeader from '../components/TopHeader';
@@ -25,6 +25,7 @@ interface Props{
 export default function Home({authors, posts}: Props) {
   
   return (
+    <RootLayout>
     <div className={styles.container}>
       <Head>
         <title>Medium Blog</title>
@@ -43,7 +44,12 @@ export default function Home({authors, posts}: Props) {
   return (
     <Link key={post._id} href={`/post/${post.slug.current}`}>
       <div className="border rounded-lg group cursor-pointer overflow-hidden" >
-        <img className="h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out" src={urlFor(post.mainImage.asset)} alt={post.title} />
+      <img
+    className="h-60 w-full object-cover group-hover:scale-105 transition-transform duration-200 ease-in-out"
+    src={urlFor(post.mainImage.asset).url()}
+    alt={post.title}
+/>
+
         <div className="flex justify-between p-5 bg-white">
           
             <div >
@@ -52,7 +58,14 @@ export default function Home({authors, posts}: Props) {
             </div>
             
           
-            {author && author.image && <img className="h-12 w-12 rounded-full" src={urlFor(author.image.asset)} alt={author.name} />}
+            {author && author.image && (
+    <img 
+        className="h-12 w-12 rounded-full"
+        src={urlFor(author.image.asset).url()}
+        alt={author.name}
+    />
+)}
+
           
         </div>
       </div>
@@ -65,6 +78,7 @@ export default function Home({authors, posts}: Props) {
 
 
     </div>
+    </RootLayout>
   )
 }
 
