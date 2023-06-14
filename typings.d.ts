@@ -1,10 +1,14 @@
 export interface Author {
-    id: string;
+    _id: string;
     _createdAt: string;
     author:{
         name: string;
         image:string;
     };
+    image:{
+        asset:string;
+    }
+    name:string;
     description:string;
     mainImage:{
         asset:{
@@ -20,14 +24,16 @@ export interface Author {
 
 
 export interface Post {
-    id: string;
+    _id: string;
     _createdAt: string;
     author:{
         name: string;
         image:string;
+        _ref:string;
     };
     comments:Comment[];
     description:string;
+    title:string;
     mainImage:{
         asset:{
             url:string;
